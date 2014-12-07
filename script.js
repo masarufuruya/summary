@@ -41,62 +41,27 @@ $(function() {
         event.preventDefault();
     });
 
-    function checkIndex(array, id) {
-        $.each(array, function(index, value) {
-            console.log(value);
-            console.log(value.id);
-            console.log(value.name);
-            if (value.id == id) {
-                return index;
-            }
-        });
-    }
-
     // ドロップ時の実際の処理
     $('.menu li').on('drop', function(event, ui) {
         // ページの遷移を防止
         // (これが無いとドラッグファイルの内容が表示される)
         event.preventDefault();
 
-        // hiddenの値を取得
-        var answerUsers = $.parseJSON($('.answer-users').val());
-
         // ドロップ先の要素を取得
         var dropImg = $(this).find('img');
         var dropImgSrc = dropImg.attr('src');
         var dropImgClass = dropImg.attr('class');
         var dropImgId = dropImg.attr('userId');
+        var dropOrder = dropImg.attr('order');
 
         // ドラッグ元の要素を取得
         var dragImgClass = event.dataTransfer.getData('text/plain');
-        var dragImg = $('img.' + dragImgClass)
+        var dragImg = $('img.' + dragImgClass);
 
         var dragImgSrc = dragImg.attr('src');
         var dragImgClass = dragImg.attr('class');
         var dragImgId = dragImg.attr('userId');
-
-        // $.each(answerUsers, function(id, val) {
-        //     // ドロップ先のindex取得
-        //     var dropIndex = checkIndex(answerUsers, dropImgId);
-
-        //     // ドラッグ元のindex取得
-        //     var dragIndex = checkIndex(answerUsers, dragImgId);
-
-        //     // ドロップ先のユーザーを取得
-        //     var dropUser = answerUsers[dropImgId];
-
-        //     // ドラッグ元のユーザーを取得
-        //     var dragUser = answerUsers[dragImgId];
-
-        //     answerUsers.splice(dragIndex, dropIndex, dropIndex, dragIndex);
-
-        //     // // ドラッグ元のユーザーをドロップ先のユーザーへ更新
-        //     // answerUsers[dragImgId] = dropUser;
-
-        //     // // ドロップ先のユーザーをドラッグ元のユーザーへ更新
-        //     // answerUsers[dropImgId] = dragUser;
-        // });
-        $('.answer-users').val($.stringify(answerUsers));
+        var dragOrder = dragImg.attr('order');
 
         // ドラッグ元の画像をドロップ先のURLへ更新
         dragImg.attr('src', dropImgSrc);
@@ -107,6 +72,17 @@ $(function() {
         dropImg.attr('src', dragImgSrc);
         dropImg.attr('class', dragImgClass);
         dropImg.attr('userId', dragImgId);
-    });
+
+        // モデルの値も更新
+        var answerUsers = $.parseJSON($('.answer-users').val());
+
+        var dragUser = answerUsers[dragOrder];
+        var dropUser = answerUsers[dropOrder];
+
+        answerUsers[dragOrder] = dropUser;
+        answerUsers[dropOrder] = dragUser;
+
+        $('.answer-users').val($.stringify(answerUsers));
+    })
 })
 
