@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #FFFFF;
+  font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  min-width: 800px;
+}
+
+.header {
+  height: 40px;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.main {
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.quiz-content .menu {
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-content ul {
+  list-style: none;
+  position: relative;
+  left: 17%;
+  margin: 50px 0;
+}
+
+.quiz-content ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.quiz-content ul li {
+  float:left;
+  margin-left: 40px;
+}
+
+.quiz-result {
+  display: none;
+}
+
+.quiz-answer {
+  display: none;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer a {
+  color: #6FC9D8;
+}
