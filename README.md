@@ -17,3 +17,9 @@ jquery+Drag &amp; Drop APIで画像を並べ替えするコード
 * jQueryを使ったDOMの更新方法
 * json ⇔ JavaScriptオブジェクトの変換
 * PHPからDBへのアクセス方法(PDO)
+
+## 課題
+* jQueryでビュー側の変更をモデルに反映する方法
+* jQueryからPHPへAjaxをリクエストする方法
+* jQueryのリクエスト結果を元にDOMを更新する方法
+* PHPでAjaxのリクエストを受け取ってレスポンスを返す方法
