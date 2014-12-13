@@ -24,6 +24,7 @@ try {
     <meta charset="utf-8">
     <title>quizAge</title>
     <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/flat-ui.css">
     <link rel="stylesheet" href="style.css">
     <script src="jquery-2.1.1.min.js"></script>
     <script src="script.js"></script>
@@ -44,7 +45,7 @@ try {
         <form action="answer.php" method="post">
 
             <div class="quiz-content">
-                <h1>左から年齢が高い順に並べ替えて下さい♪</h1>
+                <h3>左から年齢が高い順に並べ替えて下さい♪</h3>
                 <div class="menu">
                     <ul>
                     	<?php
@@ -70,6 +71,14 @@ try {
             <button class="btn btn-primary next-button">回答を見る</button>
         </form>
         </div>
+    </div>
+	<div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7">
+          </div> <!-- /col-xs-7 -->
+        </div>
+      </div>
     </div>
     </body>
 </html>

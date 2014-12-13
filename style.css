@@ -3,9 +3,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #FFFFF;
-  font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #fff;
+  font-family:"Lato", Helvetica, Arial, sans-serif;
   min-width: 800px;
+  color: #34495e
 }
 
 .header {
@@ -21,44 +22,26 @@ html, body {
   text-align: center;
 }
 
-.quiz-content .menu {
-  position: relative;
-  overflow: hidden;
+.main h3 {
+  margin-left: 10px;
+  text-align: left;
 }
 
-.quiz-content ul {
-  list-style: none;
-  position: relative;
-  left: 17%;
-  margin: 50px 0;
+.col {
+  padding: 0px;
 }
 
-.quiz-content ul:after {
-  content: "";
-  display: block;
-  clear: both;
+label {
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.quiz-content ul li {
-  float:left;
-  margin-left: 40px;
+.add-button {
+  margin-top: 20px;
+  text-align: left;
 }
 
-.quiz-result {
-  display: none;
-}
-
-.quiz-answer {
-  display: none;
-}
-
-.footer {
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
-
-.footer a {
-  color: #6FC9D8;
+.summary-button {
+  margin-top: 80px;
+  text-align: left;
 }
